@@ -26,6 +26,7 @@ public class Main {
 
     public static void Menu() {
         int menuNumber;
+        Person person=new Person();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Выберите требуемый пункт: " +
@@ -55,7 +56,8 @@ public class Main {
                     while (!isCorrectly){
                         System.out.println("Введите фамилию клиента: ");
                         String Surname = scanner.next();
-                        if (Surname.matches("[А-Я][а-я]{4,}")){
+
+                        if (person.CheckCorrectFIO(Surname)){
                             System.out.println(persons.getDataByFullName(Surname));
                             isCorrectly=true;
                         }
@@ -91,7 +93,7 @@ public class Main {
                     while (!isCorrectly){
                         System.out.println("Введите фамилию клиента: ");
                         String Surname = scanner.next();
-                        if (Surname.matches("[А-Я][а-я]{4,}")){
+                        if (person.CheckCorrectFIO(Surname)){
                             System.out.println(persons.remove(Surname));
                             isCorrectly=true;
                         }

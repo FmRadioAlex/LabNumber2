@@ -21,7 +21,7 @@ package com.company;
 
 
     public static boolean CheckCorrectFIO(String str) {
-        return str.matches("^[A-Z]([a-z -]{0,})");
+        return str.matches("[А-Я][а-я]{4,}");
     }
   
     public static boolean CheckCorrectNumber(String str) {
